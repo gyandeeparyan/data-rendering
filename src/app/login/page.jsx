@@ -74,7 +74,7 @@ const LoginPage = () => {
               disabled={loading}
               className="w-full bg-blue-600 rounded-full hover:bg-blue-500 text-white font-semibold py-2 transition duration-200"
             >
-              {loading ? "Getting in" : "Login"}
+               {loading ? (<><span className="animate-ping ">🚀🚀🚀🚀🚀🚀</span></>):"Login"}
             </button>
           </form>
           <p className="mt-4 text-center text-sm">

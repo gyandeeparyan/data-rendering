@@ -37,7 +37,7 @@ const RegisterPage = () => {
       <div className=" rounded-lg  p-8 max-w-md w-full">
       <div className="text-center md:text-right">
           <h1 className="text-4xl font-semibold tracking-tight lg:text-5xl mb-6">
-            Welcome to  Roc8 Dashboard
+            🚀 Dashboard
           </h1>
           <p className="mb-4">Signup to continue </p>
         </div>
@@ -72,7 +72,7 @@ const RegisterPage = () => {
             disabled={loading}
             className="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2 rounded-full transition duration-200"
           >
-            {loading ? "Hold on":"Register"}
+            {loading ?  (<><span className="animate-ping ">🚀🚀🚀🚀🚀🚀</span></>):"Register"}
           </button>
         </form>
         <p className="mt-4 text-center text-sm">
