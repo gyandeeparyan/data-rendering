@@ -2,12 +2,14 @@
 
 import React, { useState, useEffect, Suspense } from "react";
 import BarChart from "@/components/BarChart";
-import LineChart from "@/components/LineChart";
+import dynamic from 'next/dynamic';
 import Filter from "@/components/Filter";
 import { useFilter } from "@/hooks/useFilter";
 import { useAuth } from "@/context/AuthContext";
 import { useSearchParams, useRouter } from 'next/navigation';
-
+const LineChart = dynamic(() => import('@/components/LineChart'), {
+  ssr: false 
+});
 // Utility function to format dates as YYYY-MM-DD
 const formatDate = (date) => {
   if (!date) return null;
