@@ -21,6 +21,7 @@ const formatDate = (date) => {
 const Dashboard = () => {
   const [url, setUrl] = useState("");
   const [selectedIndex, setSelectedIndex] = useState(null);
+  const [isMounted, setIsMounted] = useState(false);
   const { user, logout } = useAuth();
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -35,9 +36,14 @@ const Dashboard = () => {
     filteredData,
   } = useFilter();
 
-  // Ensure window-related code only runs on the client
+  // Set isMounted to true once the component mounts
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    setIsMounted(true);
+  }, []);
+  
+  // Handle URL params initialization
+  useEffect(() => {
+    if (!isMounted) return;
 
     const startDate = searchParams.get('startDate');
     const endDate = searchParams.get('endDate');
@@ -58,10 +64,11 @@ const Dashboard = () => {
     if (gender && gender !== selectedGender) {
       setSelectedGender(gender);
     }
-  }, []);
+  }, [isMounted, searchParams]);
 
+  // Update URL when filters change
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (!isMounted) return;
 
     const params = new URLSearchParams();
     
@@ -80,26 +87,26 @@ const Dashboard = () => {
     setUrl(newUrl);
 
     router.push(`/?${params.toString()}`, { scroll: false });
-  }, [selectedDateRange, selectedAge, selectedGender, router]);
+  }, [selectedDateRange, selectedAge, selectedGender, router, isMounted]);
 
   const handleBarClick = (index) => {
     setSelectedIndex(index);
   };
 
-  const copyToClipboard = () => {
-    if (typeof window !== 'undefined' && navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(url)
-        .then(() => alert('URL copied to clipboard!'))
-        .catch((err) => {
-          console.error('Failed to copy: ', err);
-          fallbackCopyTextToClipboard(url);
-        });
-    } else {
+  const copyToClipboard = async () => {
+    if (!isMounted) return;
+
+    try {
+      await navigator.clipboard.writeText(url);
+      alert('URL copied to clipboard!');
+    } catch (err) {
       fallbackCopyTextToClipboard(url);
     }
   };
   
   const fallbackCopyTextToClipboard = (text) => {
+    if (!isMounted) return;
+
     const textField = document.createElement("textarea");
     textField.value = text;
     textField.style.position = "fixed";  

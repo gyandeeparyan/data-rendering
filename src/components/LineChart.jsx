@@ -1,8 +1,8 @@
-"use client"
+"use client";
+
 import React from "react";
 import { Line } from "react-chartjs-2";
 import zoomPlugin from "chartjs-plugin-zoom";
-
 import {
   Chart as ChartJs,
   LineElement,
@@ -12,6 +12,7 @@ import {
   Tooltip,
 } from "chart.js";
 
+// Register chart.js components
 ChartJs.register(
   LineElement,
   CategoryScale,
@@ -22,8 +23,24 @@ ChartJs.register(
 );
 
 const LineChart = ({ lineData, selectedIndex }) => {
+  if (typeof window === 'undefined') {
+    return null; 
+  }
+
+  // Ensure lineData is valid
+  if (!Array.isArray(lineData) || lineData.length === 0) {
+    console.error("Invalid lineData prop:", lineData);
+    return <div>No data available</div>;
+  }
+
   const newLineData = lineData.slice(1, 105);
   const lineChartData = newLineData.map(({ Features }) => Features);
+
+  // Check if selectedIndex is valid
+  if (selectedIndex === null || selectedIndex < 0 || selectedIndex >= lineChartData[0].length) {
+    console.error("Invalid selectedIndex:", selectedIndex);
+    return <div>No data available for the selected index</div>; 
+  }
 
   const selectedBarDataPoints = lineChartData.map(
     (dataPoint) => dataPoint[selectedIndex]
@@ -89,6 +106,7 @@ const LineChart = ({ lineData, selectedIndex }) => {
       },
     },
   };
+
   return <Line data={data} options={options} />;
 };
 
