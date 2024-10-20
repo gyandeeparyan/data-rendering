@@ -5,10 +5,10 @@ import BarChart from "@/components/BarChart";
 import LineChart from "@/components/LineChart";
 import Filter from "@/components/Filter";
 import { useFilter } from "@/hooks/useFilter";
-
+import { useAuth } from "@/context/AuthContext";
 const Dashboard = () => {
   const [selectedIndex, setSelectedIndex] = useState(null);
-
+  const {user ,logout} =useAuth()
   const {
     selectedAge,
     setSelectedAge,
@@ -28,6 +28,9 @@ const Dashboard = () => {
       <div className="flex flex-col items-center gap-y-8">
         <div>
           <h1 className="font-bold mt-6 text-3xl">Interactive Dashboard</h1>
+          <br/>
+          <p>Namaste {user?.email}</p>
+          <button className="px-4 py-2 rounded-lg bg-red-600 text-white" onClick={()=>logout()}>Logout</button>
         </div>
         <Filter
           value={selectedDateRange}

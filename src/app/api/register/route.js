@@ -4,7 +4,7 @@ import dbConnect from '@/lib/dbConnect';
 import jwt from 'jsonwebtoken';
 import User from '@/models/User';
 
-export async function POST(req: Request) {
+export async function POST(req) {
   const { email, password } = await req.json();
   await dbConnect();
 
