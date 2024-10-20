@@ -27,7 +27,7 @@ const RegisterPage = () => {
 
   return (
 <div className="md:p-12">
-<div className="flex items-center bg-neutral-900 justify-around h-screen md:h-[80vh]  py-8 md:border-[0.5px] border-solid-gray-100 rounded-xl text-white">
+<div className="flex items-center bg-neutral-900 justify-around h-screen md:h-[80vh]  py-8 md:border-[0.5px] border-solid-gray-100 md:rounded-xl text-white">
 
 <div className="bg-blue-400 max-w-[400px] dark:bg-blue-400  rounded-xl hidden md:block">
 <Image src={"https://illustrations.popsy.co/amber/working-vacation.svg"} alt="signin illustration" width={400} height={600}></Image>
