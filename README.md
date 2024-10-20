@@ -1,9 +1,8 @@
 
 # Q2 | Dashboard   
 
-The app features an email list page. This page shows the list of emails sent to a user.
-Clicking on any email item in the list should split the screen into a master-slave (left-right) screen type where the master (left) shows the email list (with the selected email item) while the slave (right) shows the body of the email. The body of the email is not known ahead of time and should be loaded only when the email item is clicked
-
+Imagine you are working on a project to build a product analytics platform for your company. The platform provides users with real-time data on sales, user engagement, etc. Your task is to develop a front-end application that includes interactive data visualization charts, advanced filtering options, and efficient cookie management for user preferences.
+Additionally, the user will be sharing a view of the page with specific filters enabled and dates selected through the browser URL. Other users can then access the shared view by simply visiting this URL upon authentication
 
 
 ## Screenshots
