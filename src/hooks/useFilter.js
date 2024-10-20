@@ -27,11 +27,17 @@ export const useFilter = () => {
   );
 
   let filteredByDateRange = filterByGender.filter(({ Day }) => {
-    const date = dateFormat(Day);
-    const initialDate = dateRangeFormat(startDate);
-    const lastDate = dateRangeFormat(endDate);
+
+    const date = dateFormat(new Date(Day)); 
+  
+
+    const initialDate = dateRangeFormat(startDate instanceof Date ? dateFormat(startDate) : startDate);
+    const lastDate = dateRangeFormat(endDate instanceof Date ? dateFormat(endDate) : endDate);
+  
+    
     return date >= initialDate && date <= lastDate;
   });
+  
 
   if (filteredByDateRange[0] !== undefined) {
     filteredByDateRange = [data[0], ...filteredByDateRange];

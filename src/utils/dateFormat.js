@@ -1,3 +1,4 @@
+// Formats a date object into a string 'YYYYMMDD'
 export function dateFormat(date) {
   const originalDate = new Date(date);
 
@@ -8,7 +9,19 @@ export function dateFormat(date) {
   return `${year}${month}${day}`;
 }
 
+// Handles both date objects and strings
 export function dateRangeFormat(date) {
   if (!date) return;
-  return date.split("-").join("");
+
+  // If it's a Date object, use dateFormat
+  if (date instanceof Date) {
+    return dateFormat(date);
+  }
+
+  // If it's a string, split and remove hyphens
+  if (typeof date === "string") {
+    return date.split("-").join("");
+  }
+
+  return null;
 }

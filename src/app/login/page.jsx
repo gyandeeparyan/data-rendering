@@ -2,18 +2,20 @@
 import React, { useState } from 'react';
 import { useAuth } from '@/context/AuthContext';
 import Link from 'next/link';
-import {useRouter} from "next/navigation"
+import {useRouter,useSearchParams} from "next/navigation"
 const LoginPage = () => {
   const { login } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const router = useRouter()
+  const searchParams = useSearchParams();
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await login(email, password);
-      router.replace("/")
+      const returnTo = searchParams.get('returnTo') || '/';
+      router.push(returnTo);
     } catch (err) {
       setError(err.message);
     }
