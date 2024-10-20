@@ -14,7 +14,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     try {
       const response = await axios.post('/api/login', { email, password });
-      setUser(response.data.user); // Assuming the user object is returned
+      setUser(response.data.email); // Assuming the user object is returned
       return response.data;
     } catch (error) {
       throw new Error(error.response?.data?.error || 'Login failed');
@@ -24,7 +24,7 @@ export const AuthProvider = ({ children }) => {
   const register = async (email, password) => {
     try {
       const response = await axios.post('/api/register', { email, password });
-      setUser(response.data.user); 
+      setUser(response.data.email); 
       return response.data;
     } catch (error) {
       throw new Error(error.response?.data?.error || 'Registration failed');

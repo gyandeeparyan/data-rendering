@@ -123,8 +123,8 @@ const Dashboard = () => {
   };
 
   return (
-    <>
-      <div className="flex flex-col py-6 items-center gap-y-4">
+    <div className="flex flex-col">
+      <div className=" py-6  gap-y-4">
         
         <Filter
           value={selectedDateRange}
@@ -136,12 +136,12 @@ const Dashboard = () => {
         />
       </div>
 
-      <div className="flex justify-evenly m-8 p-8 gap-8">
-        <div className="w-full h-full">
+      <div className="flex flex-col md:flex-row justify-evenly m-0 p-2 md:m-8 md:p-8 gap-8">
+        <div className="w-full h-[200%] chart-container lg:h-full items-center justify-center">
           <BarChart onBarClick={handleBarClick} barData={filteredData} />
         </div>
 
-        <div className="w-full h-full">
+        <div className="w-full chart-container h-full">
           {selectedIndex !== null && (
             <LineChart lineData={filteredData} selectedIndex={selectedIndex} />
           )}
@@ -149,14 +149,16 @@ const Dashboard = () => {
       </div>
       
       <div className="flex flex-col px-4 py-4 items-center mt-4">
-      <p>Namaste {user?.email}</p>
-        <div className="flex gap-4">
+      <p>namaste <span className="text-green-400">{user}</span></p>
+        <div className="flex flex-col md:flex-row gap-4">
         <input
           type="text"
           value={url}
           readOnly
           className="w-full max-h-[40px] max-w-md p-2 mt-2 border text-black border-gray-300 rounded"
         />
+        <div className="flex justify-center gap-2">
+
         <button
           onClick={copyToClipboard}
           className="mt-2 px-4  max-h-[40px] flex-grow-0 py-2 rounded-lg bg-blue-600 text-white"
@@ -164,10 +166,12 @@ const Dashboard = () => {
           Copy
         </button>
         <button className="px-4 py-2 mt-2 max-h-[40px] rounded-lg bg-red-600 text-white" onClick={logout}>Logout</button>
+       
+        </div>
         </div>
        
       </div>
-    </>
+    </div>
   );
 };
 

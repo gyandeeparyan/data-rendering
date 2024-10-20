@@ -6,10 +6,10 @@ import { ages, genders } from "@/utils/constants";
 const DropDown = ({ label, options, selectedOption, setSelectedOption }) => {
   return (
     <div className="w-full flex ">
-      <label className="mx-2">
-        {label}:
+      <label className="my-2 gap-2 md:items-center flex flex-col md:flex-row">
+       <span className="hidden md:block">{label}:</span> 
         <select
-        className="text-white mx-2 px-4 py-2 rounded-lg bg-slate-800"
+        className="text-white  px-4 py-2 rounded-lg bg-slate-800"
           value={selectedOption}
           onChange={(e) => {
             setSelectedOption(e.target.value);
@@ -35,7 +35,8 @@ const Filter = ({
   setSelectedGender,
 }) => {
   return (
-    <div className="flex gap-6 items-center w-full px-72">
+    <div className="flex flex-col lg:flex-row gap-2 items-center w-full px-16 lg:px-72">
+      <div className="flex gap-2">
       <DropDown
         
         label="Age"
@@ -49,6 +50,8 @@ const Filter = ({
         selectedOption={selectedGender}
         setSelectedOption={setSelectedGender}
       />
+      </div>
+     
       <Datepicker value={value} onChange={handleValueChange} />
     </div>
   );
