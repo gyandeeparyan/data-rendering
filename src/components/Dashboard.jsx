@@ -1,10 +1,10 @@
 "use client"
 
 import React, { useState } from "react";
-import BarChart from "@/src/components/BarChart";
-import LineChart from "@/src/components/LineChart";
-import Filter from "@/src/components/Filter";
-import { useFilter } from "@/src/hooks/useFilter";
+import BarChart from "@/components/BarChart";
+import LineChart from "@/components/LineChart";
+import Filter from "@/components/Filter";
+import { useFilter } from "@/hooks/useFilter";
 
 const Dashboard = () => {
   const [selectedIndex, setSelectedIndex] = useState(null);

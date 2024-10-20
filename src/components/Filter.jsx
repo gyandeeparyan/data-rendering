@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
 import Datepicker from "react-tailwindcss-datepicker";
-import { ages, genders } from "@/src/utils/constants";
+import { ages, genders } from "@/utils/constants";
 
 const DropDown = ({ label, options, selectedOption, setSelectedOption }) => {
   return (
