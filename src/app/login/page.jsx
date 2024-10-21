@@ -28,7 +28,7 @@ const LoginPage = () => {
       setLoading(false);
     }
   };
-
+  const returnTo = searchParams.get('returnTo');
   return (
     <div className="md:p-12">
       <div className="flex items-center bg-neutral-900 justify-around h-screen md:h-[80vh] py-8 md:border-[0.01px] border-solid-gray-100 md:rounded-3xl text-white">
@@ -80,7 +80,7 @@ const LoginPage = () => {
             </button>
           </form>
           <p className="mt-4 text-center text-sm">
-            Don’t have an account? <Link href="/register" className="text-blue-400 hover:underline">Register</Link>
+            Don’t have an account?<Link href={`/register${returnTo ? `?returnTo=${encodeURIComponent(returnTo)}` : ''}`} className="text-blue-400 hover:underline">Register</Link>
           </p>
         </div>
       </div>
