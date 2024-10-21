@@ -133,7 +133,7 @@ const Dashboard = () => {
     const shareData = {
       title: 'Check out this amazing dashboard',
       text: 'Have a look at this link:',
-      url: window.location.href,  
+      url: url,  
     };
 
     try {
