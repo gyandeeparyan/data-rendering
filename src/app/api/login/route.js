@@ -26,7 +26,7 @@ export async function POST(req) {
     // Set the token in a cookie
     const response = NextResponse.json({ message: 'Logged in', email });
     response.cookies.set('token', token, { httpOnly: true })
-
+    response.cookies.set('email', email, { path: '/', maxAge: 3600 });
     return response;
   } catch (error) {
     console.error('Login error:', error);

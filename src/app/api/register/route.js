@@ -15,5 +15,6 @@ export async function POST(req) {
   const token = jwt.sign({ userId: newUser._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
   const response=NextResponse.json({ message: 'User registered successfully' , email});
   response.cookies.set('token', token, { httpOnly: true })
+  response.cookies.set('email', email, { path: '/', maxAge: 3600 });
   return response
 }
