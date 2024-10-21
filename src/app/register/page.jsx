@@ -109,7 +109,7 @@ const RegisterPage = () => {
 };
 
 const SuspendedRegisterPage = () => (
-  <Suspense fallback={<div>Loading...</div>}>
+  <Suspense fallback={<div className="flex items-center justify-center  font-bold text-5xl">🚀 Sky is not the limit, your mind is !</div>}>
     <RegisterPage />
   </Suspense>
 );

@@ -100,6 +100,9 @@ const Dashboard = () => {
 
     try {
       await navigator.clipboard.writeText(url);
+      if (navigator.vibrate) {
+        navigator.vibrate(100);
+      }
       alert('URL copied to clipboard!');
     } catch (err) {
       fallbackCopyTextToClipboard(url);
@@ -138,7 +141,11 @@ const Dashboard = () => {
 
     try {
       if (navigator.share) {
+        if (navigator.vibrate) {
+          navigator.vibrate(200);
+        }
         await navigator.share(shareData);
+        
         console.log('Shared successfully');
       } else {
         alert('Web Share API is not supported in your browser.');
@@ -149,7 +156,7 @@ const Dashboard = () => {
   };
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div className="flex items-center justify-center  font-bold text-5xl">🚀 Sky is not the limit, your mind is !</div>}>
       <div className="flex flex-col">
         <div className="py-6 gap-y-4">
           <Filter
