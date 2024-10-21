@@ -131,8 +131,8 @@ const Dashboard = () => {
   const handleShare = async () => {
     if (!isMounted) return;
     const shareData = {
-      title: 'Check out this amazing dashboard',
-      text: 'Have a look at this link:',
+      title: `${user}'s dashboard`,
+      text: `${user}'s dashboard`,
       url: url,  
     };
 
