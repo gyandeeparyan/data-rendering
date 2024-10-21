@@ -127,6 +127,27 @@ const Dashboard = () => {
     }
   };
 
+
+  const handleShare = async () => {
+    if (!isMounted) return;
+    const shareData = {
+      title: 'Check out this amazing dashboard',
+      text: 'Have a look at this link:',
+      url: window.location.href,  
+    };
+
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+        console.log('Shared successfully');
+      } else {
+        alert('Web Share API is not supported in your browser.');
+      }
+    } catch (error) {
+      console.error('Error sharing:', error);
+    }
+  };
+
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <div className="flex flex-col">
@@ -168,6 +189,12 @@ const Dashboard = () => {
                 className="mt-2 px-4 max-h-[40px] flex-grow-0 py-2 rounded-lg bg-blue-600 text-white"
               >
                 Copy
+              </button>
+              <button
+                onClick={handleShare}
+                className="mt-2 px-4 max-h-[40px] flex-grow-0 py-2 rounded-lg bg-blue-600 text-white"
+              >
+                Share
               </button>
               <button
                 className="px-4 py-2 mt-2 max-h-[40px] rounded-lg bg-red-600 text-white"
