@@ -160,9 +160,7 @@ const Dashboard = () => {
   return (
     <Suspense
       fallback={
-        <div className='flex items-center justify-center  font-bold text-5xl'>
-          🚀 Sky is not the limit, your mind is !
-        </div>
+        <div className="flex items-center justify-center px-4 text-3xl"><p>🚀 Sky is not the limit, your mind is !</p></div>
       }>
       <div className='flex flex-col'>
         <div className='py-6 gap-y-4'>
