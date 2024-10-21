@@ -154,7 +154,7 @@ const Dashboard = () => {
         </div>
         
         <div className="flex flex-col px-4 py-4 items-center  mt-4">
-          <p className=""><span className="bg-green-200 rounded-full max-h-[35px] px-2 py-1 items-center flex gap-2  text-green-800"><span className="text-green-500  font-bold text-5xl">&#8226;</span>{user}</span></p>
+          <p className=""><span className="bg-green-200 rounded-full max-h-[35px] px-4 py-1 items-center flex gap-2  text-green-800"><span className="text-green-500 animate-ping  font-bold text-2xl">&#8226;</span>{user}</span></p>
           <div className="flex flex-col md:flex-row gap-4">
             <input
               type="text"
