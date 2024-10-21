@@ -100,12 +100,13 @@ const Dashboard = () => {
 
   const copyToClipboard = async () => {
     if (!isMounted) return;
-
+    if (navigator.vibrate) {
+      navigator.vibrate(100);
+    }
     try {
+      
       await navigator.clipboard.writeText(url);
-      if (navigator.vibrate) {
-        navigator.vibrate(100);
-      }
+      
       alert("URL copied to clipboard!");
     } catch (err) {
       fallbackCopyTextToClipboard(url);
@@ -160,7 +161,7 @@ const Dashboard = () => {
   return (
     <Suspense
       fallback={
-        <div className="flex items-center justify-center px-4 text-3xl"><p>🚀 Sky is not the limit, your mind is !</p></div>
+        <div className="flex flex-row min-h-screen px-4 justify-center items-center"><p>🚀 Sky is not the limit, your mind is !</p></div>
       }>
       <div className='flex flex-col'>
         <div className='py-6 gap-y-4'>
