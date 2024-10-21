@@ -31,15 +31,17 @@ const LoginPage = () => {
 
   return (
     <div className="md:p-12">
-      <div className="flex items-center bg-neutral-900 justify-around h-screen md:h-[80vh] py-8 md:border-[0.5px] border-solid-gray-100 md:rounded-xl text-white">
-        <div className="bg-blue-400 max-w-[400px] dark:bg-blue-400 rounded-xl hidden md:block">
+      <div className="flex items-center bg-neutral-900 justify-around h-screen md:h-[80vh] py-8 md:border-[0.01px] border-solid-gray-100 md:rounded-3xl text-white">
+        <div style={{
+    backgroundImage: 'linear-gradient(30deg, #060031FF 0%, #71C4FFFF 100%)',
+  }} className=" rounded-[30px] hidden md:block">
           <Image src={"https://illustrations.popsy.co/amber/home-from-work.svg"} alt="signin illustration" width={400} height={600}></Image>
         </div>
 
         <div className="rounded-lg p-8 max-w-md w-full">
           <div className="text-center md:text-right">
             <h1 className="text-4xl font-semibold tracking-tight lg:text-5xl mb-6">
-              Welcome back to Dashboard
+             🚀 Dashboard
             </h1>
             <p className="mb-4">Sign in to continue </p>
           </div>
