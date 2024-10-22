@@ -77,9 +77,8 @@ const RegisterPage = () => {
                 type="email"
                 placeholder="email@roc8.com"
                 id="email"
-                value={email} // Controlled input for email
-                onChange={(e) => setEmail(e.target.value)} // Update email on change
-                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)} 
                 className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring focus:ring-blue-500"
               />
             </div>
@@ -90,14 +89,14 @@ const RegisterPage = () => {
               <input
                 type="password"
                 id="password"
-                value={password} // Default password is always 'kindness'
-                onChange={(e) => setPassword(e.target.value)} // Allow user to change if needed
+                value={password} 
+                onChange={(e) => setPassword(e.target.value)}
                 required
                 className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring focus:ring-blue-500"
               />
             </div>
             {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
-            <p>default password is <span className="text-green-500">"kindness"</span></p>
+            <p>default password is <span className="text-green-500">&quot;kindness&quot;</span></p>
             <button
               type="submit"
               disabled={loading}
