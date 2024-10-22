@@ -29,7 +29,6 @@ export async function middleware(request) {
   return NextResponse.next();
 }
 
-// Configure the middleware
 export const config = {
   matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
 };

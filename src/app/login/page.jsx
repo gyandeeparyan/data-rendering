@@ -8,8 +8,8 @@ import Image from "next/image";
 
 const LoginPage = () => {
   const { login } = useAuth();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('swapnil@roc8.com');
+  const [password, setPassword] = useState('12345678');
   const [error, setError] = useState('');
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -50,6 +50,7 @@ const LoginPage = () => {
               <label className="block text-sm font-medium mb-1" htmlFor="email">Email</label>
               <input
                 placeholder="swapnil@roc8.com"
+               
                 type="email"
                 id="email"
                 value={email}
@@ -62,6 +63,7 @@ const LoginPage = () => {
               <label className="block text-sm font-medium mb-1" htmlFor="password">Password</label>
               <input
                 placeholder="12345678"
+            
                 type="password"
                 id="password"
                 value={password}
