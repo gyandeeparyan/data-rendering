@@ -6,8 +6,8 @@ Additionally, the user will be sharing a view of the page with specific filters 
 
 
 ## Screenshots
-![Register Page](https://res.cloudinary.com/dzbmc0pit/image/upload/v1729430148/signup-dashboard_kbuvrk.png)
-![Login Page](https://res.cloudinary.com/dzbmc0pit/image/upload/v1729430148/login_mldhgk.png)
+![Register Page](https://res.cloudinary.com/dzbmc0pit/image/upload/f_auto,q_auto/xxhme5irwgzow3iwoths)
+![Login Page](https://res.cloudinary.com/dzbmc0pit/image/upload/f_auto,q_auto/drlyf0cjkdymhkzojfsj)
 ![Dashboard Page](https://res.cloudinary.com/dzbmc0pit/image/upload/v1729429972/data-visualisation-dashboard_jrjmla.png)
 
 
@@ -33,7 +33,7 @@ les to distinguish between the same.
 
 ## Tech Stack
 
-**Client:** Next.js, React Context , Chart.js , Express.js MongoDB,Mongoose, TailwindCSS ,Vercel
+Next.js, React Context , Chart.js , Express.js MongoDB, Mongoose, TailwindCSS , Vercel
 
 
 ## Run Locally
@@ -47,7 +47,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd data-rendering
 ```
 
 Install dependencies
@@ -70,5 +70,5 @@ Start the server
 
 ## Feedback
 
-- https://sameeksha.vercel.app/u/gyan
+- [Send anonymous feedback](https://sameeksha.vercel.app/u/gyan?utm_feedback_type=git-roc8-dashboard)
 
