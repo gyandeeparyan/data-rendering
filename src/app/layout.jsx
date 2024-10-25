@@ -15,8 +15,8 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "🚀 Dashboard",
-  description: "🚀 Dashboard",
+  title: "Dashboard",
+  description: "Dashboard",
   generator: "Next.js",
   manifest: "/manifest.json",
   keywords: ["nextjs", "next14", "pwa", "next-pwa"],
@@ -25,6 +25,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
+       <head><link rel="icon" href="/icons-256.png" sizes="any" /></head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <AuthProvider> {children} </AuthProvider>
