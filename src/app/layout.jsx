@@ -14,7 +14,7 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "🚀 Dashboard",
   description: "🚀 Dashboard",
   generator: "Next.js",
