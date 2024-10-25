@@ -96,7 +96,7 @@ const RegisterPage = () => {
               />
             </div>
             {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
-            <p>default password is <span className="text-green-500">&quot;kindness&quot;</span></p>
+            <p className="my-2">default password is <span className="text-green-500">&quot;kindness&quot;</span></p>
             <button
               type="submit"
               disabled={loading}

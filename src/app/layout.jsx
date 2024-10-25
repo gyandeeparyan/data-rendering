@@ -14,10 +14,12 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata = {
-  title: "Dashboard",
-  description:
-    "Build a bar chart to represent the Features. A,B,C.. are features and x axis is total time spent between the selected date range",
+export const metadata: Metadata = {
+  title: "🚀 Dashboard",
+  description: "🚀 Dashboard",
+  generator: "Next.js",
+  manifest: "/manifest.json",
+  keywords: ["nextjs", "next14", "pwa", "next-pwa"],
 };
 
 export default function RootLayout({ children }) {
