@@ -213,21 +213,21 @@ const Dashboard = () => {
                 backgroundImage: 'linear-gradient(30deg, #060031FF 0%, #71C4FFFF 100%)',
               }}
                 onClick={copyToClipboard}
-                className='mt-2 flex gap-2 px-4 max-h-[40px] flex-grow-0 py-2 rounded-full transform transition duration-300 hover:scale-105 text-white'>
-               <Copy className=""/> Copy
+                className='mt-2 flex gap-2 text-sm px-4 items-center justify-center max-h-[40px] flex-grow-0 py-2 rounded-full transform transition duration-300 hover:scale-105 text-white'>
+               <Copy size={16} className=""/> Copy
               </button>
               <button
               style={{
                 backgroundImage: 'linear-gradient(30deg, #060031FF 0%, #71C4FFFF 100%)',
               }}
                 onClick={handleShare}
-                className='mt-2 px-4 flex gap-2 max-h-[40px] flex-grow-0 py-2 transform transition duration-300 hover:scale-105 rounded-full text-white'>
-               <SquareArrowOutUpRight/> Share
+                className='mt-2 px-4 flex text-sm gap-2 items-center justify-center max-h-[40px] flex-grow-0 py-2 transform transition duration-300 hover:scale-105 rounded-full text-white'>
+               <SquareArrowOutUpRight size={16}/> Share
               </button>
               <button
-                className='px-4 flex gap-2 py-2 mt-2 max-h-[40px] rounded-full transform transition duration-300 hover:scale-105 bg-red-600 text-white'
+                className='px-4 flex gap-2 items-center justify-center text-sm py-2 mt-2 max-h-[40px] rounded-full transform transition duration-300 hover:scale-105 bg-red-600 text-white'
                 onClick={logout}>
-                <UserRoundMinus/> Logout
+                <UserRoundMinus size={16}/> Logout
               </button>
             </div>
           </div>
