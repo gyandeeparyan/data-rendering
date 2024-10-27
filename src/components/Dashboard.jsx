@@ -7,6 +7,7 @@ import Filter from "@/components/Filter";
 import { useFilter } from "@/hooks/useFilter";
 import { useAuth } from "@/context/AuthContext";
 import { useSearchParams, useRouter } from "next/navigation";
+import { Copy ,SquareArrowOutUpRight,UserRoundMinus } from 'lucide-react';
 const LineChart = dynamic(() => import("@/components/LineChart"), {
   ssr: false,
 });
@@ -175,7 +176,7 @@ const Dashboard = () => {
           />
         </div>
 
-        <div className='flex flex-col md:flex-row justify-evenly m-0 p-2 md:m-8 md:p-8 gap-8'>
+        <div className='flex flex-col md:flex-row justify-evenly m-0 p-2 md:mx-8 md:p-8 '>
           <div className='w-full h-[200%] chart-container lg:h-full items-center justify-center'>
             <BarChart onBarClick={handleBarClick} barData={filteredData} />
           </div>
@@ -190,8 +191,8 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className='flex flex-col px-4 py-4 items-center  mt-4'>
-          <p className=''>
+        <div className='flex flex-col px-4 pt-2 pb-4 items-center'>
+          <p className='my-4'>
             <span className='bg-green-200 rounded-full max-h-[35px] px-4 py-1 items-center flex gap-2  text-green-800'>
               <span className='text-green-500 animate-ping  font-bold text-2xl'>
                 &#8226;
@@ -208,19 +209,25 @@ const Dashboard = () => {
             />
             <div className='flex justify-center gap-2'>
               <button
+              style={{
+                backgroundImage: 'linear-gradient(30deg, #060031FF 0%, #71C4FFFF 100%)',
+              }}
                 onClick={copyToClipboard}
-                className='mt-2 px-4 max-h-[40px] flex-grow-0 py-2 rounded-lg bg-blue-600 text-white'>
-                Copy
+                className='mt-2 flex gap-2 px-4 max-h-[40px] flex-grow-0 py-2 rounded-full transform transition duration-300 hover:scale-105 text-white'>
+               <Copy className=""/> Copy
               </button>
               <button
+              style={{
+                backgroundImage: 'linear-gradient(30deg, #060031FF 0%, #71C4FFFF 100%)',
+              }}
                 onClick={handleShare}
-                className='mt-2 px-4 max-h-[40px] flex-grow-0 py-2 rounded-lg bg-blue-600 text-white'>
-                Share
+                className='mt-2 px-4 flex gap-2 max-h-[40px] flex-grow-0 py-2 transform transition duration-300 hover:scale-105 rounded-full text-white'>
+               <SquareArrowOutUpRight/> Share
               </button>
               <button
-                className='px-4 py-2 mt-2 max-h-[40px] rounded-lg bg-red-600 text-white'
+                className='px-4 flex gap-2 py-2 mt-2 max-h-[40px] rounded-full transform transition duration-300 hover:scale-105 bg-red-600 text-white'
                 onClick={logout}>
-                Logout
+                <UserRoundMinus/> Logout
               </button>
             </div>
           </div>

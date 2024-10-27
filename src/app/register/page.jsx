@@ -64,7 +64,7 @@ const RegisterPage = () => {
         <div className="rounded-lg p-8 max-w-md w-full">
           <div className="text-center md:text-right">
             <h1 className="text-4xl font-semibold tracking-tight lg:text-5xl mb-6">
-              🚀 Dashboard
+             <span className="animate-pulse">🚀</span> Dashboard
             </h1>
             <p className="mb-4">Signup to continue</p>
           </div>
@@ -79,7 +79,7 @@ const RegisterPage = () => {
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)} 
-                className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring focus:ring-blue-500"
+                className="w-full p-2 bg-neutral-800  rounded-lg focus:outline-none focus:ring focus:ring-blue-500"
               />
             </div>
             <div className="mb-4">
@@ -92,15 +92,18 @@ const RegisterPage = () => {
                 value={password} 
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring focus:ring-blue-500"
+                className="w-full p-2 bg-neutral-800  rounded-lg focus:outline-none focus:ring focus:ring-blue-500"
               />
             </div>
             {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
             <p className="my-2">default password is <span className="text-green-500">&quot;kindness&quot;</span></p>
             <button
               type="submit"
+              style={{
+                backgroundImage: 'linear-gradient(30deg, #060031FF 0%, #71C4FFFF 100%)',
+              }}
               disabled={loading}
-              className="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2 rounded-full transition duration-200"
+              className="w-full rounded-full transform transition duration-300 hover:scale-105 text-white font-semibold py-2"
             >
               {loading ? (
                 <>
