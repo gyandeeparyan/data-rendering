@@ -176,7 +176,7 @@ const Dashboard = () => {
           />
         </div>
 
-        <div className='flex flex-col md:flex-row justify-evenly m-0 p-2 md:mx-8 md:p-8 '>
+        <div className='flex flex-col md:flex-row justify-evenly gap-6 md:gap-2 m-0 p-2 md:mx-8 md:p-8 '>
           <div className='w-full h-[200%] chart-container lg:h-full items-center justify-center'>
             <BarChart onBarClick={handleBarClick} barData={filteredData} />
           </div>
